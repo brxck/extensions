@@ -1,0 +1,60 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "bufo",
+  "title": "Bufo",
+  "description": "Search and paste bufo stickers from bufo.fun",
+  "icon": "command-icon.png",
+  "author": "brxck",
+  "categories": ["Fun", "Media"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "search-bufos",
+      "title": "Search Bufos",
+      "description": "Search and paste bufo stickers",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "defaultAction",
+      "title": "Default Action",
+      "description": "Which action runs when you press Enter on a bufo",
+      "type": "dropdown",
+      "required": false,
+      "default": "paste",
+      "data": [
+        { "title": "Paste into App", "value": "paste" },
+        { "title": "Copy Image", "value": "copy" },
+        { "title": "Download to Disk", "value": "download" }
+      ]
+    },
+    {
+      "name": "downloadDirectory",
+      "title": "Download Directory",
+      "description": "Where the Download to Disk action saves bufos",
+      "type": "directory",
+      "required": false,
+      "default": "~/Downloads"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.83.1",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
